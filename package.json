@@ -1,0 +1,19 @@
+{
+  "name": "dean-test-repo",
+  "version": "1.0.0",
+  "description": "DEAN Agent Testing Repository - JavaScript/Node.js code for testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": ["dean", "agent", "testing", "optimization"],
+  "author": "DEAN System",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
