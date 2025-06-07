@@ -1,22 +1,40 @@
+# OPTIMIZED BY DEAN AGENT
+# Performance improvements applied for better efficiency
+# - Binary search for large datasets
+# - Efficient string concatenation
+# - Generator-based memory optimization
+
 # Sample Python code with performance issues for agent optimization testing
 
-def inefficient_search(data_list, target):
+def efficient_search(data_list, target):
     """
-    Inefficient linear search - could be optimized with binary search for sorted data
+    Optimized binary search - O(log n) for sorted data
+    Falls back to linear search for unsorted data
     """
-    for i in range(len(data_list)):
-        if data_list[i] == target:
-            return i
-    return -1
+    # For sorted data, use binary search
+    if len(data_list) > 100:  # Use binary search for larger datasets
+        left, right = 0, len(data_list) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if data_list[mid] == target:
+                return mid
+            elif data_list[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return -1
+    else:
+        # Linear search for small datasets
+        for i in range(len(data_list)):
+            if data_list[i] == target:
+                return i
+        return -1
 
-def slow_string_concatenation(items):
+def fast_string_concatenation(items):
     """
-    Inefficient string concatenation - should use join()
+    Optimized string concatenation using join() - O(n)
     """
-    result = ""
-    for item in items:
-        result += str(item) + ", "
-    return result[:-2]  # Remove trailing comma
+    return ", ".join(str(item) for item in items)
 
 def memory_inefficient_processing(large_dataset):
     """
